@@ -40,7 +40,6 @@ public class OrderItem {
     }
 
     //== 비즈니스 메서드 ==//
-
     public void cancel() {
         getItem().addStock(count);
     }
