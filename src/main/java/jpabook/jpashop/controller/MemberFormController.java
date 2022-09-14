@@ -21,7 +21,7 @@ public class MemberFormController {
 
     @GetMapping("members/new")
     public String createForm(Model model) {
-        model.addAttribute("memberForm",new MemberForm());
+        model.addAttribute("memberForm", new MemberForm());
         return "members/createMemberForm";
     }
 
@@ -31,7 +31,7 @@ public class MemberFormController {
             return "/members/createMemberForm";
         }
 
-        Address address = new Address(memberForm.getCity(),memberForm.getStreet(),memberForm.getZipcode());
+        Address address = new Address(memberForm.getCity(), memberForm.getStreet(), memberForm.getZipcode());
         Member member = new Member();
         member.setName(memberForm.getName());
         member.setAddress(address);
@@ -46,5 +46,7 @@ public class MemberFormController {
         model.addAttribute("members", members);
         return "members/memberList";
     }
+
+
 }
 
