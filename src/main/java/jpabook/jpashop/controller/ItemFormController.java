@@ -23,13 +23,7 @@ public class ItemFormController {
     @PostMapping("/items/new")
     public String create(ItemForm form) {
 
-        Book book = new Book();
-        book.setName(form.getName());
-        book.setPrice(form.getPrice());
-        book.setStockQuantity(form.getStockQuantity());
-        book.setAuthor(form.getAuthor());
-        book.setIsbn(form.getIsbn());
-
+        Book book = Book.createBook(form);
         itemService.savedItem(book);
         return "redirect:/";
 
